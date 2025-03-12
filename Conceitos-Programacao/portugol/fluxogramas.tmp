@@ -1,10 +1,17 @@
 inicio
-	inteiro num
-	num <- 0
-	ler num
-	se num >= 10 entao
-		escrever "O número " , num , " é igual ou maior que 10!"
-	senao
-		escrever "O número " , num , " é menor que 10!"
-	fimse
+	real pro
+	real alt
+	real lar
+	real vol
+	pro <- 0.0
+	alt <- 0.0
+	lar <- 0.0
+	vol <- 0.0
+	escrever "Qual a profundidade do objecto?"
+	ler pro
+	escrever "Qual a altura do objecto?"
+	ler alt
+	escrever "Qual a largura do objecto?"
+	ler lar
+	escrever vol = pro * alt * lar
 fim
