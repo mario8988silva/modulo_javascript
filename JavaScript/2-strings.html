@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #bbb;
+
+            height: 100vh;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        main{
+            border: 4px double #333;
+            margin: 1em 2em;
+            padding: 2em;
+            border-radius: 12px;
+            background-color: #eee;
+        }
+    </style>
+    <title>JavaScript - Intro</title>
+</head>
+<body>
+    <h1>JS - Tipos de Dados : Strings</h1>
+    <main>
+        <section id="output"></section>
+    </main>
+
+    <script>
+        // string conjunto de caracteres
+        let nome = "<b>Mário"; // devem ser inseridas dentro de "" ou ''
+        let apelido = 'Silva</b>';
+        let nacionalidade = 'Portuguesa' // backticks, template literals - ES6
+
+        // " " ' ' não permitem mais do que uma quebra de linha string;
+        // ` ` backticks permitem várias quebras de linha dentro de uma string
+        // juntar strings diz-se 'contenar strings';
+
+        // ES5:
+        let nomeCompleto = nome + ' ' + apelido;
+
+        /*
+        let output = document.getElementById('output');        
+        output.innerHTML = nomeCompleto;
+        */
+
+
+        let frase = "<h3> O Srº " + nome + " " + apelido + "é de nacionalidade " + nacionalidade + ".</h3>";
+
+        /*
+        let output = document.getElementById('output');        
+        output.innerHTML = frase;
+        */
+
+
+        // ES6 - template literal - multiline strings:
+        let outraFrase = `
+        <h2> O Srº ${nome} ${apelido} </h2>
+        <h3> É de nacionalidade ${nacionalidade} </h3>
+        <hr>
+        `;
+
+        let output = document.getElementById('output');        
+        output.innerHTML = outraFrase
+
+    </script>
+</body>
+</html>
