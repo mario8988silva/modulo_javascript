@@ -58,7 +58,15 @@
         */
 
 
+        /*
         let frase = "<h3> O Srº " + nome + " " + apelido + "é de nacionalidade " + nacionalidade + ".</h3>";
+        */
+
+        //outro método:
+        let frase = "<h3> O Srº ";
+            frase += nome + " ";
+            frase += apelido + " é de nacionalidade ";
+            frase += nacionalidade + ".</h3>";
 
         /*
         let output = document.getElementById('output');        
@@ -73,8 +81,32 @@
         <hr>
         `;
 
+        let texto = `
+            <h1> ${'Olá' + nomeCompleto} </h1>
+
+            <!-- propriedades -->
+            <p> Número de caracteres: ${nomeCompleto.length}</p>
+
+            <!-- características -->
+            <!-- altera o conteúdo para upper case -->
+            <p> ${nomeCompleto.toUpperCase()} </p>
+            
+            <!-- altera o conteúdo para lower case -->
+            <p> ${nomeCompleto.toLowerCase()} </p>
+
+            <!-- identifica -->
+            <p> ${nomeCompleto.charAt(2)} </p>
+
+            <!-- devolve o número do caracter "á" -->
+            <p> ${nomeCompleto.indexOf('á')} </p>
+
+            <!-- procura por um caracter "x"; se não encontrar devolve o valor -1 -->
+            <p> ${nomeCompleto.search('x')} </p>
+
+        `;
+
         let output = document.getElementById('output');        
-        output.innerHTML = outraFrase
+        output.innerHTML = texto;
 
     </script>
 </body>
