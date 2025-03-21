@@ -40,20 +40,24 @@
     </main>
 
     <script>
+        let texto = '';
 
-        // manda uma mensagem de alerta, numa aba justaposta:
-        // alert('Hello Wolrd!');
-        
+        let x=Number(prompt('Primeiro Número:'));
+        let y=Number(prompt('Segundo Número:'));
+
+        let menor=(x<y)?x:y;
+        let maior=(x>y)?x:y;
+
+        while(menor<maior){
+            if(menor%2==0){
+                texto+=`<p>${menor}</p>`;
+            }
+            menor++;
+        }
+
         // escrever dentro da section output
-        
-        /*
         let output = document.getElementById('output');        
-        output.innerHTML = 'Hello World';
-        */
-
-        //escrever na consola:
-        console.log(x)
-        x += 1;
+        output.innerHTML = texto;
 
     </script>
 <!--
