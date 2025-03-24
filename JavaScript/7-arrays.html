@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #bbb;
+
+            height: 100vh;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        main{
+            border: 4px double #333;
+            margin: 1em 2em;
+            padding: 2em;
+            border-radius: 12px;
+            background-color: #eee;
+        }
+    </style>
+    <title>JavaScript - Intro</title>
+</head>
+<body>
+    <h1>JS - </h1>
+    <main>
+        <section id="output"></section>
+    </main>
+
+    <script>
+        
+        let texto='';
+
+        let nome = new String();
+        let numero= new Number();
+
+        // ARRAYS:
+        let formandos=[]; // boa prática;
+        let formandes= new Array(); // em termos de perfomance, tem défices;
+
+        let formandas = ['Mariana', 'Marina', 'Inês'];
+        let exemplo = ['Inês', 123, true [5, 6, 7]];
+        console.log(formandas);
+
+        // Inserir dados dentro da array:
+
+        formandos[0]="António";
+        formandos[1]="Nuno";
+        formandos[2]="Tiago";
+        formandos[3]="Zé";
+        console.log(formandos);
+
+        //
+        console.log('formandos - dimensão: ', formandos.lenght); // dita quantos valores exitem dentro da array;
+        console.log(formandos[1]); // dita qual o valor com o valor 1
+        console.log([formandos.lenght-1]) // dita qual o ultimo valor
+
+        //métodos de array
+        formandos.push('Renan') // acrecenta no fim
+        console.log(formandos);
+
+        formandos.unshift('Mario'); // acrescenta no inicio
+        console.log(formandos);
+
+        formandos.pop() // elimina o ultimo
+        console.log(formandos);
+
+        formandos.shift(); // elimina o primeiro
+        console.log(formandos);
+
+
+        //junção das arrays - não elimina as arrays base. faz sim uma mutação para uma variável
+        let turma=formandos.concat(formandas);
+        console.log(turma);
+
+        // faz uma ordenação - no entanto esta ordem depende que todos os valores tenham caracteres similares. Que todos comecem por maiúscula, por exemplo
+        turma.sort();
+        console.log(turma);
+        turma.reverse();
+        console.log(turma);
+
+        //copy by value : isto acontece com valores primitivos (booleanos, numericos e strings):
+        //
+        let num1 = 1;
+        let num2= num1;
+        texto+=`<br> ${num1}`;
+        texto+=`<br> ${num2}`;
+
+        num2=5;
+        texto+=`<br> ${num1}`;
+        texto+=`<br> ${num2}`;
+
+        texto+=`<hr>`;
+
+        let nums =[1,2,3,4,]; // a última vírgula = trailing comma
+        texto+=`<br>Nums: ${nums}`;
+
+        let outrosNums=nums; // copy by reference : faz dois apontadores/duas variáveis a apontar para a mesma referência na memória. isto acontece com arrays
+        texto+=`<br>Outros Nums: ${outrosNums}`;
+
+        //adicionamos um valor:
+        outrosNums.push(5);
+        texto+=`<br>outros Nums: ${outrosNums}`;
+        texto+=`<br>Nums: ${nums}`;
+
+
+        // CLONAR ARRAYS :
+        //fazemos uma nova array . contactamos/inserimos os valores da array x;
+        let cloneNums = [].concat(nums);
+
+        texto+=`<hr>`;
+        texto+=`<br>Clone Nums: ${cloneNums}`;
+
+        nums.push(100);
+        texto+= `<br>Nums: ${nums}`;
+        texto+= `<br>Clone Nums: ${cloneNums}`;
+
+
+        // SPREAD (...) OPERATOR :
+        let outroCLone = [...nums]; //spread operator (copy by value); adiciona os conteúdos dentro da array nums; sem os três pontos ... adicionaria a array nums dentro da array outroClone; 
+        console.log(outroCLone);
+        nums.push(500);
+        console.log(outroCLone);
+        console.log(nums);
+
+        // ITERAR ARRAYS : fazer uma lista de uma array :
+        texto+="<hr><br>"
+
+        // faz repetição de valor
+        // enquanto existirem valores dentro da array, começando no valor 0zero (sendo uma nova variavel "index"), ir à extensão da array, e repetir: aluno, acrescendo index+1 + valor da array :
+        for (let index = 0; index < turma.length; index++) {
+            texto+=`
+            <h3>Aluno ${index+1}: ${turma[index]}</h3>
+            `;            
+        }
+
+        texto+="<hr><br>"
+
+        // FOR OF :
+
+        for (let aluno of turma) {
+            texto+=`
+            <h3>Aluno: ${aluno}</h3>
+            `;            
+        }
+
+
+
+
+        let output = document.getElementById('output');        
+        output.innerHTML = texto;
+
+    </script>
+<!--
+    <script src="js/script.js"></script>
+-->    
+</body>
+</html>
