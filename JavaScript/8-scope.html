@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #bbb;
+
+            height: 100vh;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        main{
+            border: 4px double #333;
+            margin: 1em 2em;
+            padding: 2em;
+            border-radius: 12px;
+            background-color: #eee;
+        }
+    </style>
+    <title>JavaScript - Intro</title>
+</head>
+<body>
+    <h1>JS - </h1>
+    <main>
+        <section id="output"></section>
+    </main>
+
+    <script>
+
+        let a = 3;
+        console.log('a: ', a);
+
+        if(true){
+            console.log('a dentro do if: ', a);
+            let b = 5;
+            console.log('b dentro do if: ', b);
+        }
+
+        /*
+        console.log('b fora do if: ', b);
+        */
+
+        // -----------------------------------
+
+        /*
+        var num = 10;
+        num = 3;
+        console.log('num: ', num)
+
+        var num = 12;
+        */
+
+        const pi = 3.14;
+        console.log('pi: ', pi);
+
+
+        /*
+        let output = document.getElementById('output');        
+        output.innerHTML = 'Hello World';
+        */
+
+    </script>
+<!--
+    <script src="js/script.js"></script>
+-->    
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #bbb;
+
+            height: 100vh;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        main{
+            border: 4px double #333;
+            margin: 1em 2em;
+            padding: 2em;
+            border-radius: 12px;
+            background-color: #eee;
+        }
+    </style>
+    <title>JavaScript - Intro</title>
+</head>
+<body>
+    <h1>JS - </h1>
+    <main>
+        <section id="output"></section>
+    </main>
+
+    <script>
+
+        let texto= '';
+
+        //função "simples":
+        function dizerOla(){
+        texto += `<hr>`;
+        texto += `<p>Olá João </p>`;
+        texto += `<p>Bem-vindo ao JavaScript</p>`;
+        texto += `<hr>`;
+        }
+
+        // invocamos a declaração:
+        dizerOla();
+
+        // funcções com parâmetros:
+        // dentro dos () inserem-se os parâmetros a serem chamados, separados por vírgula;
+        // aqui podem ser declarados os standart dos parâmetros, por meio de igual: x=y;
+        function dizerOlaNome(nome, apelido='Silva'){
+        texto += `<hr>`;
+        texto += `<p>Olá ${nome} ${apelido} </p>`;
+        texto += `<p>Bem-vindo ao JavaScript</p>`;
+        texto += `<hr>`;
+        }
+
+        // chama a function, os parâmetros, abafando o standart:
+        dizerOlaNome('Maria', 'Jaquina');
+
+        //chama a function, os parâmetros, eventualmente é aplicado o standart do segundo, dado que não é declarado:
+        dizerOlaNome('Zé');
+        dizerOlaNome('António');
+
+        // funções que retornam valores:
+        // declaram-se variáveis com valores base: 
+        function calcularArea (altura=1, comprimento=1){
+            // faz o cálculo:
+            let area = altura * comprimento;
+            // retorna o valor:
+            return area;
+        }
+
+        // temos assim a fórmula, apenas chamamos a função e os valores a serem aplicados:
+        console.log(calcularArea(5, 9));
+
+        let altura = Number(prompt('Qual a altura?'));
+        let comprimento = Number(prompt('Qual o comprimento?'))
+        texto += `
+        <h1> Rectângulo de ${altura} altura e ${comprimento} comprimento, tem uma área de ${calcularArea(altura, comprimento)}</h1>
+        `;
+
+
+
+        let output = document.getElementById('output');        
+        output.innerHTML = texto;
+
+    </script>
+<!--
+    <script src="js/script.js"></script>
+-->    
+</body>
+</html>
