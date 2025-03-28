@@ -74,6 +74,40 @@
         numeros.forEach(num => quadruplos2.push(num*4)); // código com uma abordagem declarativa
         texto += `<p>Quadruplos: ${quadruplos2};</p>`;
 
+        // ALguns métodos introduzidos em ES6; Métodos mais declarativos, não fazem mutação à array original:
+
+        // criar uma array de potencias:
+        // por cada valor da array numeros, eleva a dois (o n acaba de ser gerado aqui e é uma variável local):
+        let pontencias = numeros.map(n => n**2);
+        texto += `<p>Potências por meio de x.map: ${pontencias};</p>`;
+        texto += `<br><hr><br>`;
+
+        // filter : filtrar valores de uma array:
+        let cervejas = [
+            'Sagres',
+            'Super Bock',
+            'Guiness',
+            'Heineken',
+            'Brahma',
+            'Franciskanner', // trailing comma (quando se deixa uma vírgula após o último valor)
+        ];
+
+        console.log(cervejas);
+        
+        //lista de cervejas com mais de seis letras:
+        let cervejaComMais6Letras = cervejas.filter(cerveja => (cerveja.length > 6));
+        console.log(cervejaComMais6Letras);
+        console.log(cervejas);     
+        
+        // cervejas sem sagres:
+        let cervejasSemSagres = cervejas.filter(cerveja => cerveja != 'Sagres');
+        console.log(cervejasSemSagres);
+        console.log(cervejas);
+
+        // referências: pesquisar sempre que haja necessidade. o importante é perceber o método, as funções pesquisam-se no momento.
+        // map(), filter(), find(), every(), some(), reduce(), ... ;
+
+
         let output = document.getElementById('output');        
         output.innerHTML = texto;
     </script>
