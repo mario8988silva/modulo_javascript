@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #bbb;
+
+            height: 100vh;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        main{
+            border: 4px double #333;
+            margin: 1em 2em;
+            padding: 2em;
+            border-radius: 12px;
+            background-color: #eee;
+        }
+    </style>
+    <title>JavaScript - Intro</title>
+</head>
+<body>
+    <h1>JS - </h1>
+    <main>
+        <section id="output"></section>
+    </main>
+
+    <script>
+
+        let texto = '';
+
+    // FUNCTION DECLARATION : declara uma function:
+    dizerOla(); // HOISTING : quando a function é chamada antes de ser declarada.
+    function dizerOla(){
+        texto += `<hr>`;
+        texto += `<p>Olá Mário<p>`;
+        texto += `<p>Bem-Vindo ao JavaScript!</p>`;
+        texto += `<hr>`;
+    }
+
+    // FUNCTION EXPRESSION : declara uma variável que é uma function:
+    // dizerOla2(); // não faz HOISTING antes da function ser declarada
+    let dizerOla2 = function(){
+        texto += `<hr>`;
+        texto += `<p>Olá Mário<p>`;
+        texto += `<p>Bem-Vindo ao JavaScript!</p>`;
+        texto += `<hr>`;
+    }
+    dizerOla2();
+
+    /*
+    // ANNONYMOUS FUNCTION - função sem nome :
+    function(content){
+        //content
+    }
+    */
+
+    // ARROW FUNCTIONS (é uma FUnction Expression):
+    /*
+    function calcularCircunferencia(raio=1){
+        let perimetro = 2 * Math.PI * raio;
+        return perimetro;
+    }
+    console.log(calcularCircunferencia(5));
+    */dizerOla2
+    let calcularCircunferencia = (raio) => 2 * Math.PI * raio;
+
+    let calcularCircunferencia2 = raio => {
+        let perimetro = 2 * Math.PI * raio;
+        return perimetro;
+    }
+
+    let output = document.getElementById('output');        
+    output.innerHTML = 'Hello World';    
+
+    </script>
+<!--
+    <script src="js/script.js"></script>
+-->    
+</body>
+</html>

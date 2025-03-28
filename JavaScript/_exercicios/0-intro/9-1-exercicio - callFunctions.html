@@ -39,28 +39,25 @@
         <section id="output"></section>
     </main>
 
+    <!-- CHAMA O FICHEIRO DE SCRIPT -->
+    <script src="../js/biblioteca.js"></script>
     <script>
-        let texto = '';
+        // variável para eventual output:
+        let texto='';
 
-        // criar um numero aleatório de 0 a 20 e arredonda:
-        function fazAleatorio(de=0, ate=20){
-            return Math.random(Math.round() * (ate - de) + de);
-        }
-        console
-        //escrever na consola:
-        console.log(fazAleatorio(2, 50));
-
+        // CHAMA O FICHEIRO COM A FUNCTION QUE FAZ O RANDOM NUMBER. AQUI SÃO DEFINIDOS OS NÚMEROS VI E VF:
+        let numALeatorio = randomIntBetweenNumbers(0, 20);
+        
         // pedir número ao utilizador:
         let numero=Number(prompt('Adivinhe um número entre 0 e 20.'))
 
         // número de tentativas:
         let tentativas=1;
 
-        function analiseEresposta(){}
         //Enquanto o numero inserido for diferente daquele aleatório
-        while(numero!==numALeatorioInteiro){
+        while(numero!==numALeatorio){
             // se o numero inserido for superior àquele gerido:
-            if (numero < numALeatorioInteiro){
+            if (numero < numALeatorio){
                 alert(`o número ${numero} é demasiado BAIXO`)
             // caso contrário (se o numero inserido for superior àquele gerido:)
             } else{
@@ -79,13 +76,11 @@
 
         texto += `
             <hr>
-            <p> Parabéns acertou no número: ${numALeatorioInteiro} </p>
+            <p> Parabéns acertou no número: ${numALeatorio} </p>
             <p>Em ${tentativas} tentativas.</p>
             `;        
         
-        
-        // escrever dentro da section output:
-        
+        // escrever dentro da section output:        
         let output = document.getElementById('output');        
         output.innerHTML = texto;
 

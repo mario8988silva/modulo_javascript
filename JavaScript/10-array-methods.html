@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #bbb;
+
+            height: 100vh;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        main{
+            border: 4px double #333;
+            margin: 1em 2em;
+            padding: 2em;
+            border-radius: 12px;
+            background-color: #eee;
+        }
+    </style>
+    <title>JavaScript - Intro</title>
+</head>
+<body>
+    <h1>JS - </h1>
+    <main>
+        <section id="output"></section>
+    </main>
+
+    <script>
+        let texto = '';
+
+        // métodos de arrays:
+        let numeros = [1, 2, 3, 4, 5,];
+        texto += `<p>Números: ${numeros};</p>`;
+
+        // criar com duplicados:
+        let duplos = [];
+        // invoca os valores da array numeros, um a um até não exitirem mais:
+        for (let i = 0; i < numeros.length; i++){
+            // chama a array duplos e insere os valores da array numeros e multiplica-os por dois:
+            duplos.push(numeros[i]*2)
+        } texto += `<p>Duplos: ${duplos};</p>`;
+
+        // criar rray de triplos:
+        let triplos = [];
+        // faz uma constante com base na array numeros:
+        for (const num of numeros){
+            // chama a array triplos, insere os valores da array numeros e multiplica-os por três:
+            triplos.push(num * 3);
+        } texto += `<p>Triplos: ${triplos};</p>`;
+
+        // criar quadruplos:
+        let quadruplos = [];
+        numeros.forEach(function(num){
+            quadruplos.push(num * 4)
+        });
+        texto += `<p>Quadruplos: ${quadruplos};</p>`;
+
+        // ou por meio de arrow function:
+        let quadruplos2=[];
+        numeros.forEach(num => quadruplos2.push(num*4)); // código com uma abordagem declarativa
+        texto += `<p>Quadruplos: ${quadruplos2};</p>`;
+
+        let output = document.getElementById('output');        
+        output.innerHTML = texto;
+    </script>
+<!--
+    <script src="js/script.js"></script>
+-->    
+</body>
+</html>
