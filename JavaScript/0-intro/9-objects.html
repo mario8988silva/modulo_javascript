@@ -62,10 +62,30 @@
             },
         };
 
+        // faz outro objecto com os mesmos elementos (má prática - ver ficheiro 10):
+        const outroHotel = {
+            name: 'Evolution',
+            rooms: 100,
+            booked: 55,
+            pool: false,
+            typeOfRooms: ['suite', 'single', 'twins'],
+            // esta função é um método do objecto. temos assim que usar .this para invocar propriedades deste objecto:
+            check: function(){
+                return this.rooms - this.booked;
+            },
+            checkSemThis: function(){
+                return rooms - booked;
+            },
+        };
+
         // invoca a propriedade name do objecto hotel:
         console.log(hotel.name);
-        // invoca a proiedades/função do objecto:
+        // invoca a propiedade/função do objecto:
         console.log(hotel.check());
+
+        // mudar o valor de um elemento:
+        hotel.name = 'NovoNome';
+        console.log(hotel.name);
 
        
         // escrever dentro da section output:        
