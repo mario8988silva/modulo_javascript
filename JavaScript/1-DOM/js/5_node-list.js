@@ -21,4 +21,4 @@ let outraLista = [...itemsHot];
 outraLista.map( item => item.className = 'cool')
 
 // get... LIVE NODES : actualiza constantemente;
-77 // query... STATIC NODES : não actualiza;
+// query... STATIC NODES : não actualiza;

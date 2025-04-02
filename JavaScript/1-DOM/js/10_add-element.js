@@ -19,6 +19,6 @@ let itemInicio = document.createElement('li');
 itemInicio.textContent = 'item inicio';
 // 3. adicionar item ao inicio da lista:
 // variável.método(quem?, onde?);
-lista.inserBefore(itemInicio, lista.firstElementChild);
+lista.insertBefore(itemInicio, lista.firstElementChild);
 
 lista.append('itemInicio'); // leva o primeiro item para o fim da lista.
