@@ -1,6 +1,5 @@
 
 // chegar aos elementos por meio de parentes:
-
 let item2 = document.querySelector('#two');
 
 // seleccionar o item anterior ao mencionado:
