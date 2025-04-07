@@ -13,7 +13,8 @@
         <form method="post" action="http://www.example.org/register">
 
             <label for="username">Create a username: </label>
-            <input type="text" id="username" />
+            <input type="text" id="username" onblur="checkUsername()" />
+            <!-- para deixar mensagem caso o utilizador falte em alguma coisa no preenchimento -->
             <div id="feedback"></div>
 
             <label for="password">Create a password: </label>

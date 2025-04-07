@@ -1,0 +1,46 @@
+
+/* mini-reset das css: */
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+/* faz as imagens responsive: */
+img{
+    max-width: 100%;
+}
+
+/* afecta apenas os h1 do nível do body: */
+body > h1{
+    margin: 1em 0;
+    border-bottom: 2px solid gray;
+    padding: 1em;
+}
+
+/* formata a grid, container das cards */
+section.grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 1em;
+}
+
+/* formata a card */
+section.grid article{
+    flex: 0 1 300px;
+    padding: 1em;
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+
+section.grid article > *{
+    margin: .8em 0;
+}
