@@ -4,6 +4,13 @@
 <head>
     <title>JavaScript - Event Delegation</title>
     <link rel="stylesheet" href="css/c06.css" />
+
+    <style>
+        /* tudo o que for filho de hiperligações, não é influeciado pelo cursor */
+        a > * {
+            pointer-events: none;
+        }
+    </style>
 </head>
 
 <body>
