@@ -24,7 +24,7 @@ function eliminarItem (ev){
 
     // execepções:
     if(event.target.nodeName === 'EM'){
-        // some nivel duas vezes, daí a repetição do parent element
+        // sobe nivel duas vezes, daí a repetição do parent element
         event.target.parentElement.parentElement.remove();
     } else {
         event.target.parentElement.remove();

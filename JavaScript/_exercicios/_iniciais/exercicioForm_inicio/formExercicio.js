@@ -6,8 +6,90 @@
 5 - apresentar no H2, inserindo dentro de uma tag <span> o numero de items por comprar
 6- depois de apagar se fizer ctrl->Z , repoe o item eliminado
 */
+// const CLICK = 'click' // faz uma constante com uma função que pode ser usada ao longo do código;
+
+// Variáveis Globais :
+let newItemForm = document.getElementById('newItemForm');
+let newItemButton = document.getElementById('newItemButton');
+let showForm = document.getElementById('showForm');
+let itemDescription = document.getElementById('itemDescription');
+let ul = document.querySelector('ul');
+let h2 = document.querySelector('h2');
+let deletedItem = null;
 
 
+// 1 - esconder o form, e deixar visivel somente o botao NewItem :
+newItemForm.className = 'hide';
+newItemButton.className = 'show';
 
 
+// definir o business logic, 5:
+//actualizarNumItems();
 
+
+// definir eventos :
+showForm.addEventListener('click', mostrarForm, false); // 2
+newItemForm.addEventListener('submit', acrescentarItem, false); // 3
+ul.addEventListener('click', removerItem, false); // 4
+document.addEventListener('keydown', reporItem, false) // 6
+
+//definir listeners :
+// 2 :
+function mostrarForm(){
+    newItemForm.className = 'show';
+    newItemButton.className = 'hide';
+    itemDescription.focus();
+}
+
+// 3:
+function acrescentarItem(event){
+    let novoItem = document.createElement('li'); // faz uma li
+    novoItem.textContent = itemDescription.value; // o valor que estiver no campo de input, é adicionado para dentro da li
+    ul.prepend(novoItem); // adiciona essa li para dentro da ul
+
+    event.preventDefault();
+
+    newItemForm.className = 'hide';
+    newItemButton.className = 'show';
+
+    itemDescription.value = '';
+    
+    //actualizarNumItems();
+}
+
+// 4:
+function removerItem(event){
+    let item = event.target;
+
+    if(item.className === 'complete'){
+        deletedItem = item;
+        item.remove();
+    } else {
+        item.className = 'complete';
+        ul.append(item);
+    }
+
+    //actualizarNumItems();
+}
+
+// 5: actualizar isto!!
+/*function actualizarNumItems(){
+    let numItems = ul.querySelectorAll('li:not(.complete)'.length);
+    h2.innerHTML = `
+    Buy Groceries <span> ${numItems} </span>`;
+}*/
+
+// 6:
+function reporItem(event){
+    //console.log(event);
+    if (deletedItem && (
+        (event.ctrlKey && event.key === 'z') 
+        || 
+        (event.metaKey && event.key === 'z')
+        )
+    );
+    {
+        ul.prepend(deletedItem);
+        deletedItem = null;
+    }
+}
