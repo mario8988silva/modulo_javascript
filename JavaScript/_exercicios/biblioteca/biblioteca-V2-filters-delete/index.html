@@ -8,20 +8,44 @@
 </head>
 <body>
     <h1>Biblioteca de Livros de JS</h1>
-    <section class="grid" id="grid">
 
-       <!--  <article>
+    <section>
+        <h1>Organizar por: </h1>
+        <nav class="grid filterContainer" id="filterContainer">
+            <!--
+            <button class="btn filter" id="filter">Lidos</button>
+            <button class="btn filter" id="filter">Por Ler</button>
+            <button class="btn filter" id="filter">Todos</button>
+            <button class="btn filter" id="filter">Título</button>
+            <button class="btn filter" id="filter">Autor</button>
+            -->
+        </nav>
+    </section>
+
+    <section class="grid" id="grid">
+        <!--
+       <article>
             <h1>titulo do livro</h1>
             <h2>autor do livro</h2>
-            <img src="livros/joj.jpg" alt="titulo">
+            <img src="livros/joj.jpg" alt="titulo" class="bookcover" id="bookcover">
             <p>Already read: ✅ ❌</p>
-        </article> -->
-
-        
-
+            <button class="btn del" id="del">Delete</button>
+        </article>
+        -->
     </section>
+
+    <!--
+    <picture class="imgContainer" id="imgContainer">
+        <img src="livros/angularGr.png" alt="nome" class="imgBig" id="imgBig">
+    </picture>  
+    -->
+
     <script src="js/data.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/events.js"></script>
+
+
+    
 </body>
 </html>

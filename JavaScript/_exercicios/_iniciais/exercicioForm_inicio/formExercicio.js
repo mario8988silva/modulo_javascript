@@ -24,7 +24,7 @@ newItemButton.className = 'show';
 
 
 // definir o business logic, 5:
-//actualizarNumItems();
+actualizarNumItems();
 
 
 // definir eventos :
@@ -42,20 +42,23 @@ function mostrarForm(){
 }
 
 // 3:
+
 function acrescentarItem(event){
     let novoItem = document.createElement('li'); // faz uma li
     novoItem.textContent = itemDescription.value; // o valor que estiver no campo de input, é adicionado para dentro da li
-    ul.prepend(novoItem); // adiciona essa li para dentro da ul
-
-    event.preventDefault();
+    ul.prepend(novoItem); // adiciona essa li para dentro da ul    
 
     newItemForm.className = 'hide';
     newItemButton.className = 'show';
 
     itemDescription.value = '';
     
-    //actualizarNumItems();
-}
+    // 5
+    actualizarNumItems();
+
+    event.preventDefault();
+};
+
 
 // 4:
 function removerItem(event){
@@ -69,27 +72,28 @@ function removerItem(event){
         ul.append(item);
     }
 
-    //actualizarNumItems();
-}
+    //5
+    actualizarNumItems();
+};
 
-// 5: actualizar isto!!
-/*function actualizarNumItems(){
-    let numItems = ul.querySelectorAll('li:not(.complete)'.length);
+// 5: 
+function actualizarNumItems(){
+    let numItems = ul.querySelectorAll('li:not(.complete)').length;
     h2.innerHTML = `
     Buy Groceries <span> ${numItems} </span>`;
-}*/
+};
 
 // 6:
 function reporItem(event){
     //console.log(event);
-    if (deletedItem && (
-        (event.ctrlKey && event.key === 'z') 
-        || 
-        (event.metaKey && event.key === 'z')
+    if (deletedItem && 
+        (
+            (event.ctrlKey && event.key === 'z') 
+            || 
+            (event.metaKey && event.key === 'z')
         )
-    );
-    {
+    ){
         ul.prepend(deletedItem);
         deletedItem = null;
     }
-}
+};

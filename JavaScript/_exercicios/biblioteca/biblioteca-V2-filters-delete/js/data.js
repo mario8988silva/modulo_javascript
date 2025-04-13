@@ -1,3 +1,5 @@
+// Livros :
+
 let livros = [
     {
         title: 'Angular Com Typescript',
@@ -45,6 +47,14 @@ let livrosNaoLidos = [
         author: "Luis Ascencio",
         alreadyRead: false,
         imageUrl: 'joj.jpg',
-    },
-    
+    },    
 ];
+
+// Filtros :
+let filters = [
+    {value: 'Lidos'},
+    {value: 'Por Ler'},
+    {value: 'Todos'},
+    {value: 'Título'},
+    {value: 'Autor'},
+]
