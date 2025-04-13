@@ -9,9 +9,9 @@ function filterTest (event){
 */
 
 // ELIMINAR CARD :
+
 // APENAS AFECTA A PRIMEIRA CARD...
-/*
-let buttonDelete = document.querySelector('.del');
+let buttonDelete = document.querySelector('#del');
 buttonDelete.addEventListener('click', deleteCard, false);
 
 function deleteCard (event){ 
@@ -20,8 +20,8 @@ function deleteCard (event){
 
     console.log(event.target);
 }
-*/
 
+/*
 // com ajuda do chat gpt:
 let removeButtons = document.querySelectorAll('#del');
 removeButtons.forEach(button => {
@@ -35,4 +35,15 @@ removeButtons.forEach(button => {
       }
     });
   });
+*/
 
+// POP-UP IMAGE:
+let imgBig = document.getElementById('imgBig');
+let img = document.getElementById('bookcover');
+
+imgBig.addEventListener('click', popUp, false);
+img.addEventListener('click', popUp, false);
+
+function popUp (event) {
+    let opens = imgContainer.style.display = 'flex';
+}

@@ -70,8 +70,8 @@ img.bookcover{
     cursor: pointer;
 }
 
-.imgContainer img {
-    display: flex;
+.imgBig{
+    display: none;
 
     z-index: 2;
     background: rgba(0, 0, 0, 0.5);
