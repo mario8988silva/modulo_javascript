@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repositório : Mário Silva</title>
+    <style>
+        /* reset de estilos */
+
+        *{
+            text-decoration: none;
+            font-family: Helvetica, Arial, sans-serif;
+
+            padding: 0;
+            border: none;
+            margin: 0;           
+            box-sizing: border-box;
+
+            /* variáveis */
+            /* cor */
+            --c1:#ffe;
+            --c2:#888;
+            --c3:#333;
+            --c4:#333;
+            --c5:#333;
+            --c6:#333;
+
+            /* font-size */
+            --fs1: 2em;
+            --fs2: 1.5em;
+            --fs3: 1.2em;
+            --fs4: 1em;
+            --fs5: .8em;
+            --fs6: .6em;
+            
+            /* medidas fixas */
+            --m1: 10px;
+            --m2: 25px;
+            --m3: 50px;
+            --m4: 100px;
+            --m5: 300px;
+            --m6: 600px;
+        }
+
+        html{
+            background-color: var(--c1);
+        }
+
+        /* tipografia */
+        h1, p, a{
+            font-size: var(--fs3);
+            color: var(--c5);
+        }
+
+        /* nav */
+        nav{
+            margin: var(--m4);
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: var(--m2);
+            row-gap: var(--m1);
+
+            justify-content: center;
+        }
+
+        nav a{
+            padding: var(--fs6) var(--fs1);
+            background-color: var(--c2);
+
+            text-align: center;
+        }
+
+        a._home{
+            background-color: var(--c2);
+
+            color: var(--c1);            
+
+            position: sticky;
+
+            left: auto;
+            right: auto;            
+        }
+
+        a._home:hover{
+            background-color: var(--c3);
+        }
+
+        /* main */
+        main{
+            margin: 10%;
+            display: flex;
+        }        
+
+        /* section - geral */
+        section{            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row-reverse;
+            flex-wrap: wrap-reverse;
+
+            gap: var(--m2);
+        }
+        
+        section a{
+            background-color: var(--c2);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            transition: 500ms ease-in-out;
+            transition-delay: 150ms;
+            
+
+            height: var(--m5);
+            width: var(--m5);
+
+            align-content: end;
+
+            height: 300px;
+            width: 300px;
+        }
+
+        section a p{
+            text-align: center;
+            padding: var(--m1) 0;
+        }
+
+        section a.css_1{
+            background-image: url(1-exercicio-box-model-inicio/paginas-proposta/proposta-index.png);
+            background-size: 250%;
+            background-position: 50% 40%;
+        }
+
+        section a.css_2{
+            background-image: url(2-newsletter-FLAG_2/2-newsletter-1-FLAG/proposta.png);
+            background-size: 220%;
+            background-position: 45% 2%;
+        }
+        
+        /* erro da imagem; mudar para outra imagem */
+        section a.css_3{
+            background-image: url(3-newsletter-EDP/3-newsletter-2-EDP/_edp-proposta.png);
+            background-size: 200%;
+            background-position: 50% 0;
+        }
+
+        section a.css_4{
+            background-image: url(4-newsletter-Teashop/newsletter-Teashop/proposta-teashop.png);
+            background-size: 150%;
+            background-position: 50% 6%;
+        }
+
+        section a.css_5{
+            background-image: url(5-gallery-grids-inicio/proposta.png);
+            background-size: 180%;
+            background-position: 15% 90%;
+        }
+
+        /* actualizar a imagem para um screenshot do site */
+        section a.css_6{
+            background-image: url(6-exercicoSPEO-inicio/images/index-banner.jpg);
+            background-size: 220%;
+            background-position: 20% 0;
+        }
+
+        section a.css_7{
+            background-image: url(7-exercicio-newsletter-inicio-sass/images/7-exercicio2.png);
+            background-size: 220%;
+            background-position: 50% 0;
+        }
+
+        /* alterar a imagem de fundo - meter a versão de uma coluna */
+        section a.css_8{
+            background-image: url(5-gallery-grids-inicio/proposta.png);
+            background-size: 150%;
+            background-position: 0 0;
+        }
+
+        section a.css_9{
+            background-image: url(9-responsive-flex/7-responsive-flex/exerc-rwd-1-mobile.png);
+            background-size: 180%;
+            background-position: 50% 0;
+        }
+
+        section a.css_10{
+            background-image: url(10-rwdExercicio/home-phone.png);
+            background-size: 100%;
+            background-position: 20% 0;
+        }
+
+        section a:hover{
+            background-size: 300%;
+        }
+
+        /*
+        section a p{
+            opacity: 0;
+            
+            transition-property: background-color;
+            transition-delay: 500ms;
+            transition-timing-function: ease-in-out;
+        }
+
+        section a :hover{
+            opacity: 1;  
+        }
+        */
+
+    </style>
+</head>
+<body>
+    
+    <!-- eventualmente fazer com backend os filtros de cada módulo, conteudos de back desaparecem quando front está activo. -->
+    <!-- nav com os vários módulos. eventualmente fazer o mesmo para os módulos de backend -->
+    
+    <nav>
+        <a href="https://mario8988silva.github.io/main/index.html" class="_home">HOME</a>
+    </nav>    
+    
+    <!--
+    <nav>
+        <a href="#" class="_front">front end</a>
+        <a href="#s_html">html</a>
+        <a href="#s_css">css</a>
+        <a href="#">sass</a>
+        <a href="#">rwd</a>
+        <a href="#">fundamentos programação</a>
+        <a href="#">javascript</a>
+        <a href="#">react</a>
+        <a href="#">projecto front end</a>
+        
+        <a href="#" class="_back">back end</a>
+        <a href="#">introdução à estruturação de dados</a>
+        <a href="#">fundamentos à estruturação de dados</a>
+        <a href="#">bases de dados mysql</a>
+        <a href="#">php</a>
+        <a href="#">php frameworks - Lavarel</a>
+        <a href="#">criação de rest api's</a>
+        <a href="#">mongodb, nodejs, express js</a>
+        <a href="#">projecto back end</a>
+        
+    </nav>
+    -->
+
+    <!-- cada tema fica dentro de uma section -->
+    <!-- fazer thumbnails dos sites/exercicios com recurso às css grid -->
+
+    <main class="container">
+        <!--
+        <section id="s_html" class="_html"></section>
+        -->
+        <section id="s_css" class="_css">
+            F:\# Cursos\2024_FLAG Full Stack\11_Javascript\flag-2025-JS-main\JavaScript\_exercicios\_iniciais\exercicioDOM-1-inicio\exercicioDOM.html
+            <a href="https://github.com/mario8988silva/modulo_javascript/JavaScript/_exercicios/_iniciais/exercicioDOM-1-inicio/exercicioDOM.html" target="_blank" class="css_1">                
+                <p>Exercicio DOM</p>
+            </a>
+
+            <a href="https://mario8988silva.github.io/07_modulo-css/0_exercicios/2-newsletter-FLAG_2/2-newsletter-1-FLAG/index.html" target="_blank" class="css_2">
+                <!--
+                <p>newsletter flag</p>
+                -->
+            </a>
+
+            <a href="#" target="_blank" class="css_3">
+                <!--
+                <p>newsletter edp</p>
+                -->
+            </a>
+
+            <a href="#" target="_blank" class="css_4">
+                <!--
+                <p>newsletter teashop</p>
+                -->
+            </a>
+
+            <a href="#" target="_blank" class="css_5">
+                <!--
+                <p>galley grids</p>
+                -->
+            </a>
+
+            <a href="#" target="_blank" class="css_6">
+                <!--
+                <p>exercicio speo</p>
+                -->
+            </a>
+
+            <a href="#" target="_blank" class="css_7">
+                <!--
+                <p>exercicio sass</p>
+                -->
+            </a>
+            
+            <a href="#" target="_blank" class="css_8">
+                <!--
+                <p>exercicio RWD gallery</p>
+                -->
+            </a>
+
+            <a href="#" target="_blank" class="css_9">
+                <!--
+                <p>exercicio RWD responsive flex</p>
+                -->
+            </a>
+
+            <a href="#" target="_blank" class="css_10">
+                <!--
+                <p>exercicio RWD responsive flex</p>
+                -->
+            </a>
+
+        </section>
+    </main>
+
+</body>
+</html>
