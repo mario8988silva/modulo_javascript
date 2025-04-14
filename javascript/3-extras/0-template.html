@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - DataSet Object</title>
+</head>
+<body>
+    <main>
+        <button data-id="12345" data-name="mario" data-apelido="silva">Mario</button>
+        <button data-id="12345" data-name="manuel" data-apelido="antunes">Manuel Antunes</button>
+        <button data-id="12345" data-name="andreia" data-apelido="goncalves">Andreia Gonçalves</button>
+        <section id="output"></section>
+    </main>
+
+    <script>
+        let output = document.getElementById('output');
+        let btn = document.querySelector('button');
+        let btns = document.querySelector('#btns');
+
+        btns.addEventListener('click', aoCLicar, false);
+        function aoClicar(e){
+            console.log(e.target.dataset);
+        }
+
+        console.log(e);
+        output.innerHTML = '';
+    </script>
+</body>
+</html>

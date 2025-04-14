@@ -66,6 +66,21 @@ nav.filterContainer{
     padding: 1em 0 3em;
 }
 
+section.filters{
+    padding: 2em;
+}
+
+label{
+    font-weight: 600;
+}
+
+input.searchTxt{
+    padding: .5em;
+    outline: 1px solid gray;
+    border-radius: 8px;
+    margin-left: 1em;
+}
+
 img.bookcover{
     cursor: pointer;
 }
@@ -114,6 +129,12 @@ button.del{
     background-color: #dd3434;
 }
 
+button.edit{
+    color: #fff;
+
+    background-color: #81db73;
+}
+
 button.btn:hover{
     cursor: pointer;
 }
@@ -124,6 +145,12 @@ button.filter:hover{
 
 button.del:hover{
     background-color: #ae2828;
+}
+
+button.edit:hover{
+    color: #fff;
+
+    background-color: #59a34d;
 }
 
 button.btn:active{
@@ -142,4 +169,10 @@ button.del:active{
     color: #ae2828;
 
     border-color: #ae2828;
+}
+
+button.edit:active{
+    color: #81db73;
+
+    border-color: #81db73;
 }

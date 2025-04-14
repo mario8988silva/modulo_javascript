@@ -26,7 +26,22 @@ const getBooksByAuthor = () => livros.filter( livro => livro.author === x});
 // filtros :
 const getFilters = () => filters;
 
-
+// PESQUISA POR TITULO :
+// const getBooksByTitle = (text) => livros.filter( livro => livro.title.toLowerCase().search(text) > -1);
+// ou, para evitar linhas demasiado compridas, fazer em bloco:
+const getBooksByTitle = (text) => livros.filter (livro => {
+    let title = livro.title.toLowerCase();
+    return title.search(text) > -1
+});
 
 // ******************************************** //
 
+/*
+// se encontra algo no xp, devolve o numero da array onde encontra. caso nao encontre/coincida, devolve -1. daí metermos -1 nos return das constantes
+let texto = 'ola mundo cruel';
+console.log(texto.search('xp'));
+*/
+
+// DELETE DO BOOK POR ID :
+
+const deleteBook = (id) => livros = livros.filter( livro => livro.id !== Number(id));
