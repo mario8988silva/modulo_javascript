@@ -34,6 +34,20 @@ const getBooksByTitle = (text) => livros.filter (livro => {
     return title.search(text) > -1
 });
 
+
+// PESQUISA POR AUTOR :
+const getBooksByAuthor = (text) => livros.filter (livro => {
+    let title = livro.author.toLowerCase();
+    return title.search(text) > -1
+});
+
+
+const getBooksByTitleAndAuthor = (text) => livros.filter (livro => {
+    let title = livro.title.toLowerCase() || livro.author.toLowerCase();
+    return title.search(text) > -1
+});
+
+
 // ******************************************** //
 
 /*

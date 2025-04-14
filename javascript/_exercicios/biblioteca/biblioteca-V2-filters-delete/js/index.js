@@ -66,11 +66,19 @@ function searchEvents(e){
     if ((el.id === 'searchTxt') && (e.type === 'input')){
         let text = el.value.toLowerCase();
         showBooks ( getBooksByTitle ( text ) )
-    }
+    };
 
+    /*
+    if ((el.id === 'searchTxt') && (e.type === 'input')){
+        let text = el.value.toLowerCase();
+        showBooks ( getBooksByTitleAndAuthor ( text ));
+    }
+    */
+    
     console.log(e.target.id);
 }
 
+// FILTROS ALREADY READ + DELETE
 function gridEvents(e){
     console.log(e);
 
@@ -84,9 +92,25 @@ function gridEvents(e){
 
     if (e.target.dataset.type === 'deleteBtn'){
         showBooks(deleteBook(e.target.dataset.idbook))
-    }
+    }   
     
+    /*/
+    if (e.target.id === 'bookCover'){
+        console.log(e.target.id);
+
+        arrayBooks.map( book => {
+            grid.innerHTML += `
+                <picture class="imgContainer" id="imgContainer">
+                <img src="livros/angularGr.png" alt="nome" class="imgBig" id="imgBig">
+                </picture>
+            `;
+        })
+    }
+    */
+
 }
+
+
 
 
 // traduz para HTML os conteúdos da Array data.js > Livros :
@@ -102,8 +126,8 @@ function showBooks(arrayBooks){
                 <h1>${book.title}</h1>
                 <h2>${book.author}</h2>
                 <!-- id deveria ser o nome do ficheiro da imagem, sem a extensão -->
-                <img src="livros/${book.imageUrl}" alt="${book.title}" class="bookcover" id="bookcover">
-                <p>Already read: ${book.alreadyRead ? '✅' : '❌' }  </p>
+                <img src="livros/${book.imageUrl}" alt="${book.title}" class="bookCover" id="bookCover">
+                <p class="alreadyRead">Already read: ${book.alreadyRead ? '✅' : '❌' }  </p>
                 <!-- insere um botão para eliminar a devida card -->
                 <button class="btn del" id="del" data-type='deleteBtn' data-idbook=${book.id}>Delete</button>
                 <button class="btn edit" id="edit" data-type='editBtn' data-idbook=${book.id}>Edit</button>

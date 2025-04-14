@@ -36,7 +36,7 @@ removeButtons.forEach(button => {
     });
   });
 */
-
+/*
 // POP-UP IMAGE:
 let imgBig = document.getElementById('imgBig');
 let img = document.getElementById('bookcover');
@@ -47,3 +47,4 @@ img.addEventListener('click', popUp, false);
 function popUp (event) {
     let opens = imgContainer.style.display = 'flex';
 }
+*/
