@@ -8,7 +8,7 @@ let body = document.getElementsByTagName('body');
 let filterContainer = document.getElementById('filterContainer');
 let searchContainer = document.getElementById('searchContainer');
 let grid = document.getElementById('grid');
-
+let popup = document.getElementById('popup');
 
 
 
@@ -38,6 +38,7 @@ function showFilters(arrayFilters){
 filterContainer.addEventListener('click', filterEvents, false);
 searchContainer.addEventListener('input', searchEvents, false);
 grid.addEventListener('click', gridEvents, false);
+popup.addEventListener('click', closePopup, false);
 
 
 // LISTENERS :
@@ -93,6 +94,14 @@ function gridEvents(e){
     if (e.target.dataset.type === 'deleteBtn'){
         showBooks(deleteBook(e.target.dataset.idbook))
     }   
+
+    if (e.target.dataset.type === 'thumbnail'){
+        showPopup(e.target.dataset.popup)
+    }
+
+    if (e.target.dataset.type === 'popup'){
+        closePopup(e.target.dataset.popup)
+    }
     
     /*/
     if (e.target.id === 'bookCover'){
@@ -125,8 +134,10 @@ function showBooks(arrayBooks){
             <article>
                 <h1>${book.title}</h1>
                 <h2>${book.author}</h2>
-                <!-- id deveria ser o nome do ficheiro da imagem, sem a extensão -->
-                <img src="livros/${book.imageUrl}" alt="${book.title}" class="bookCover" id="bookCover">
+                <img src="livros/${book.imageUrl}" 
+                    alt="${book.title}" 
+                    data-type='thumbnail' 
+                    data-popup='livros/${book.imageUrlGr}'>
                 <p class="alreadyRead">Already read: ${book.alreadyRead ? '✅' : '❌' }  </p>
                 <!-- insere um botão para eliminar a devida card -->
                 <button class="btn del" id="del" data-type='deleteBtn' data-idbook=${book.id}>Delete</button>
@@ -154,6 +165,8 @@ function popUp(){
         </picture>
     `
 */
+
+// POP-UP: 
 
 
 

@@ -48,7 +48,7 @@ const getBooksByTitleAndAuthor = (text) => livros.filter (livro => {
 });
 */
 
-// para pesquisarmos dois parametros dentro do object, metemos as filtragens dentro para que ele trabahe os dois, depois, o OU fica no return
+// para pesquisarmos dois parametros dentro do object, metemos as filtragens dentro para que ele trabahe os dois, depois, o OU fuca no return
 const getBooksByTitleAndAuthor = (text) => livros.filter( livro => {
     let title = livro.title.toLowerCase();
     let author = livro.author.toLowerCase();
@@ -68,3 +68,14 @@ console.log(texto.search('xp'));
 // DELETE DO BOOK POR ID :
 
 const deleteBook = (id) => livros = livros.filter( livro => livro.id !== Number(id));
+
+// METODOS QUE NAO IMPLICAM ALTERACAO DO MODEL ODE DADOS :
+
+//mostrar popUp:
+const showPopup = url => {
+    popup.classList.add('open');
+    popup.firstElementChild.src = url;
+}
+
+const closePopup = () => popup.classList.remove('open');
+
