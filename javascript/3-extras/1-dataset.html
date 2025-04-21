@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCTIPT - Intro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1> JS - Dataset Object</h1>
+    <main>
+        <div id="btns">
+            <button data-id="12345" data-name="Joao" data-apelido="Goncalves">
+                joao
+            </button>
+            <button data-id="678" data-name="Maria" data-apelido="Silva">
+                maria
+            </button>
+            <button data-id="098" data-name="Manuel" data-apelido="Antunes">
+                manuel
+            </button>
+        </div>
+
+        <section id="output"></section>
+    </main>
+    
+    
+    <script>
+
+       let output = document.getElementById('output');
+       let btn = document.querySelector('button');
+       let btns = document.querySelector('#btns');
+
+       btns.addEventListener('click', aoClicar, false);
+
+       function aoClicar(e){
+        console.log(e.target.dataset);
+       }
+
+       //console.log(btn);
+
+
+
+
+       output.innerHTML = '';
+    </script>
+</body>
+</html>

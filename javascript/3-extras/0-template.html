@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS - DataSet Object</title>
+    <title>JAVASCTIPT - Intro</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1> JS - Extras</h1>
+    <hr>
     <main>
-        <button data-id="12345" data-name="mario" data-apelido="silva">Mario</button>
-        <button data-id="12345" data-name="manuel" data-apelido="antunes">Manuel Antunes</button>
-        <button data-id="12345" data-name="andreia" data-apelido="goncalves">Andreia Gonçalves</button>
+        <main>
+            <section id="container">
+                <input type="button" value="ola mundo" />
+                <input type="button" value="ola mundo Cruel" />
+                <input type="button" value="ola mundoCruel com JAVASCRIPT" />
+                <h1 id="output">
+                </h1>
+            </section>
+        </main>
         <section id="output"></section>
     </main>
-
-    <script>
-        let output = document.getElementById('output');
-        let btn = document.querySelector('button');
-        let btns = document.querySelector('#btns');
-
-        btns.addEventListener('click', aoCLicar, false);
-        function aoClicar(e){
-            console.log(e.target.dataset);
-        }
-
-        console.log(e);
-        output.innerHTML = '';
-    </script>
+    
+    
+    
+    <script src="6-destruturing-obj-exemplo.js"></script>
 </body>
 </html>
