@@ -56,3 +56,7 @@ const objectoComCarro2 = {
     ...{pais: 'Espanha'}, 
 };
 console.log('Objecto Com Carro', objectoComCarro2);
+
+// object.keys() // faz uma array de todas as keys
+// object.values() //faz uma array com todos os values da
+// object.entries() //faz uma array com as combinações das 
