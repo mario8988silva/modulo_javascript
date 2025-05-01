@@ -83,11 +83,11 @@ function searchEvents(e){
 function gridEvents(e){
     console.log(e);
 
-    if ((e.target.nodeName ==='p') && (e.target.textContent.search('✅') > -1) ){
+    if ((e.target.nodeName === 'P') && (e.target.textContent.search('✅') > -1)  ){
         showBooks(getReadBooks());
     }
 
-    if ((e.target.nodeName ==='p') && (e.target.textContent.search('❌') > -1) ){
+    if ((e.target.nodeName === 'P') && (e.target.textContent.search('❌') > -1)  ){
         showBooks(getNotReadBooks());
     }
 

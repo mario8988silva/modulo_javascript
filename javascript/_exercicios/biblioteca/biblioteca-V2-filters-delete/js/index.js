@@ -44,6 +44,7 @@ grid.addEventListener('click', gridEvents, false);
 //qualquer conteudo aqui dentro clicado, tem resposta. estas liinhas atalham bastante em termos de codigo, pois nao necessita de um codgigo de reposta para cada um dos elementos:
 function filterEvents(e){
     let el = e.target;    
+    
 
     if (el.id == 'allBtn'){
         showBooks(getBooks());
@@ -82,11 +83,11 @@ function searchEvents(e){
 function gridEvents(e){
     console.log(e);
 
-    if ((e.target.nodeName ==='p') && (e.target.textContent.search('✅') > -1) ){
+    if ((e.target.nodeName === 'P') && (e.target.textContent.search('✅') > -1)  ){
         showBooks(getReadBooks());
     }
 
-    if ((e.target.nodeName ==='p') && (e.target.textContent.search('❌') > -1) ){
+    if ((e.target.nodeName === 'P') && (e.target.textContent.search('❌') > -1)  ){
         showBooks(getNotReadBooks());
     }
 
