@@ -1,4 +1,5 @@
 * {
+    FONT-WEIGHT: 500;
     margin: 0;
     padding: 0;
     border: none;
@@ -79,10 +80,82 @@ input.searchTxt{
     outline: 1px solid gray;
     border-radius: 8px;
     margin-left: .5em;
+    width: 300px;
 }
 
-img.thumbnail{
-    cursor: pointer;
+section.addEditForm{
+    background-color: rgb(241, 241, 241);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    gap: 20px;
+
+    height: 0;
+    overflow: hidden;
+
+    transition: height 300ms ease-out;
+}
+
+section.addEditForm.open{
+    height: 400px;
+}
+
+section.addEditForm.div{
+    padding: .3em;
+}
+
+section.addEditForm input, section.addEditForm label{
+    display: block;
+}
+
+section.addEditForm form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+section.addEditForm input{
+    width: 300px;
+
+    padding: .5em;
+    outline: 1px solid gray;
+    border-radius: 8px;
+    margin-left: .5em;
+}
+
+section.addEditForm form div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+section.addEditForm .checkBoxContainer{
+    margin-left: 32px;
+    margin-right: auto;
+}
+
+section.addEditForm input.checkBox{
+    width: 20px;
+    outline: none;
+}
+
+section.addEditForm .buttonsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+.hide{
+    display: none;
+}
+
+section.softGreen{
+    background-color: rgb(232, 255, 225);
 }
 
 section.popup{
@@ -109,6 +182,10 @@ section.popup.open{
 }
 
 p.alreadyRead{
+    cursor: pointer;
+}
+
+img.thumbnail{
     cursor: pointer;
 }
 
@@ -179,42 +256,3 @@ button.edit:active{
     border-color: #81db73;
 }
 
-img.thumbnail{
-    cursor: pointer;
-}
-
-section.addEditForm{
-    background-color: lightslategrey;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    height: 0;
-    overflow: hidden;
-
-    transition: height 300ms ease-out;
-}
-
-section.addEditForm.open{
-    height: 300px;
-}
-
-section.addEditForm.div{
-    padding: .3em;
-}
-
-section.addEditForm input, section.addEditForm label{
-    display: block;
-    text-align: left;
-}
-
-section.addEditForm input{
-    padding: .3em;
-    width: 300px;
-}
-
-.hide{
-    display: none;
-}

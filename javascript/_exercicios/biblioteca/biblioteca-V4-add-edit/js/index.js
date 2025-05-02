@@ -23,8 +23,8 @@ let alreadyRead = form.alreadyRead;
 let imageUrl = form.imageUrl;
 let imageUrlGr = form.imageUrlGr;
 let selectedBook;
-let updateBookBtn = document.querySelector('#updateBookBtn');
 let addBookBtn = document.querySelector('#addBookBtn');
+let updateBookBtn = document.querySelector('#updateBookBtn');
 
 
 // LIVROS : 
@@ -37,7 +37,7 @@ let addBookBtn = document.querySelector('#addBookBtn');
 //filterContainer.addEventListener('click', filterEvents, false);
 //searchContainer.addEventListener('input', searchEvents, false);
 filters.addEventListener('click', filterEvents, false);
-filters.addEventListener('input', searchEvents, false);
+filters.addEventListener('input', filterEvents, false);
 grid.addEventListener('click', gridEvents, false);
 popup.addEventListener('click', closePopup, false);
 
@@ -68,6 +68,7 @@ function filterEvents(e){
     console.log(e.target.id);
 }
 */
+
 // MELHORIA:
 function filterEvents( {target:{id, value}, type} ){
 
@@ -83,9 +84,22 @@ function filterEvents( {target:{id, value}, type} ){
         showBooks(getNotReadBooks());
     }
 
+    if ((id === 'searchTxt') && (type === 'input')){
+        let text = value.toLowerCase();
+        showBooks(getBooksByTitleAndAuthor(text))
+    }
+
+    if( id === 'showForm'){
+        form.reset();
+        addEditForm.classList.toggle('open');
+        addBookBtn.classList.remove('hide');
+        updateBookBtn.classList.add('hide');
+        addEditForm.classList.remove('softGreen');
+    }
+
     console.log(id);
 }
-
+/*
 function searchEvents(e){
     let el = e.target;
     /*
@@ -93,7 +107,7 @@ function searchEvents(e){
         let text = el.value.toLowerCase();
         showBooks ( getBooksByTitle ( text ) )
     };
-    */
+    *//*
     
     if ((el.id === 'searchTxt') && (e.type === 'input')){
         let text = el.value.toLowerCase();
@@ -102,7 +116,7 @@ function searchEvents(e){
     
     console.log(e.target.id);
 }
-
+*/
 // FILTROS ALREADY READ + DELETE
 /*
 function gridEvents(e){
@@ -148,8 +162,13 @@ function gridEvents( {target:{nodeName, textContent, dataset:{type, popup, idboo
         showPopup(popup)
     }
 
-    if (type === 'popup'){
-        closePopup(popup)
+    if( type === 'editBtn'){
+        fillBookForm(idbook);
+
+        form.reset();
+        addEditForm.classList.add('softGreen');
+        addBookBtn.classList.add('hide');
+        updateBookBtn.classList.remove('hide');
     }
 }
 
@@ -162,22 +181,25 @@ function addBookForm (e){
     form.reset();
 
     e.preventDefault();
+    addEditForm.classList.remove('open');
 }
 
-function fillBookForm(id){
+function fillBookForm(id) {
+    
     addEditForm.classList.add('open');
 
     selectedBook = getBookById(id);
-    let {title: editTitle, author: editAuthor, alreadyRead: editAlreadyRead, imageUrl: editImageUrl, imageUrlGr: editImageUrlGr} = selectedBook;
+    let {title: editTitle, author: editAuthor, alreadyRead: editAlreadyread, imageUrl: editimageUrl, imageUrlGr:editimageUrlGr} = selectedBook;
 
     title.value = editTitle;
     author.value = editAuthor;
-    alreadyRead = editAlreadyRead;
-    imageUrl.value = editImageUrl;
-    imageUrlGr.value = editImageUrlGr;
+    alreadyRead.checked = editAlreadyread;
+    imageUrl.value = editimageUrl;
+    imageUrlGr.value = editimageUrlGr;
 }
 
 function updateBookForm(e){
+    
     let updatedBook = {
         id : selectedBook.id,
         title: title.value,
@@ -189,6 +211,10 @@ function updateBookForm(e){
 
     showBooks(updateBooks(updatedBook));
     form.reset();
+    // fechar o form conforme finaliza a actualização;
+    addEditForm.classList.remove('open');
+    addEditForm.classList.remove('softGreen');
+
     e.preventDefault();
 }
 
@@ -214,7 +240,7 @@ function showBooks(arrayBooks){
                 <p class="alreadyRead">Already read: ${book.alreadyRead ? '✅' : '❌' }  </p>
                 <!-- insere um botão para eliminar a devida card -->
                 <button class="btn del" id="del" data-type='deleteBtn' data-idbook=${book.id}>Delete</button>
-                <button class="btn edit" id="edit" data-type='editBtn' data-idbook=${book.id}>Edit</button>
+                <button class="btn edit" id="editBtn" data-type='editBtn' data-idbook=${book.id}>Edit</button>
             </article>
         `;
     })

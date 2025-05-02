@@ -11,7 +11,7 @@
 
     <section class="filters" id="filters">
 
-        <h1>Organize by: </h1>
+        <h1>See: </h1>
 
         <nav class="grid filterContainer" id="filterContainer">
             
@@ -27,11 +27,10 @@
 
         <br>
 
-        <button class="btn filter" id="showForm">Add New Book</button>
+        <button class="btn filter" id="showForm">Add A New Book</button>
           
     </section>
 
-    <!-- EXISTE ALGUM CONFLITO QUE NAO PERMITE O POPUP -->
     <section class="addEditForm" id="addEditForm">
         <h1>Edit or Add New Books</h1>
         <form autocomplete="off">
@@ -45,15 +44,15 @@
             </div>
             <div>
                 <label for="imageUrl">image thumbnail</label>
-                <input type="text" id="thumb">
+                <input type="text" id="imageUrl">
             </div>
             <div>
                 <label for="imageUrlGr">image popup</label>
                 <input type="text" id="imageUrlGr"></div>
-            <div>
+            <div class="checkBoxContainer">
                 <label for="alreadyRead">already read</label>
-                <input type="checkbox" id="alreadyRead"></div>
-            <div>
+                <input type="checkbox" id="alreadyRead" class="checkBox"></div>
+            <div class="buttonsContainer">
                 <button class="btn filter" id="addBookBtn">Add</button>
                 <button class="btn filter" id="updateBookBtn">Update</button>
             </div>            
@@ -76,16 +75,18 @@
     
     <section class="popup" id="popup">
         <img src="livros/angularGr.png" alt="">
-    </section>    
-    
+    </section>      
 
     
-    <script src="js/dom-utils.js"></script>
     <script src="js/data.js"></script>
+    <script src="js/dom-utils.js"></script>
     <script src="js/data-utils.js"></script>
     <script src="js/index.js"></script>
     <script src="js/events.js"></script>
-    
+
+<!--
+    <script type="module" src="js/index.js"></script>
+        -->
 
 <!--
     <script type="module" src="js/index.js"></script>

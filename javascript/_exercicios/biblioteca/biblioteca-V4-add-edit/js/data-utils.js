@@ -69,7 +69,7 @@ const addBook = (book) => {
 };
 
 // SELECCIONAR LIVRO POR ID :
-const getBookId = (id) => myBooks.find( b => b.id === Number(id));
+const getBookById = (id) => myBooks.find( b => b.id === Number(id));
 
 // ACTUALIZAR UM LIVRO :
 const updateBooks = book => myBooks = myBooks.map ( b => {
@@ -86,4 +86,6 @@ const updateBooks = book => myBooks = myBooks.map ( b => {
         return b;
     }
 })
+
+
 
