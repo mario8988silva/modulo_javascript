@@ -20,6 +20,7 @@ let livros = [
         imageUrl: 'angular.jpg',
         imageUrlGr: 'angularGr.png',
     },
+
     {
         id: 1,
         title: 'Blockchain com JS',
@@ -28,6 +29,7 @@ let livros = [
         imageUrl: 'blockchain.jpg',
         imageUrlGr: 'blockchainGr.png',
     },
+
     {
         id: 2,
         title: 'Deep Learning com JS',
@@ -36,6 +38,7 @@ let livros = [
         imageUrl: 'deeplearning.jpg',
         imageUrlGr: 'deeplearningGr.png',
     },
+
     {
         id: 3,
         title: 'Joy Of Javascript',
@@ -44,6 +47,7 @@ let livros = [
         imageUrl: 'joj.jpg',
         imageUrlGr: 'jojGr.png',
     },
+
     {
         id: 4,
         title: 'React Hooks in Action',
@@ -52,4 +56,5 @@ let livros = [
         imageUrl: 'reacthooks.jpg',
         imageUrlGr: 'reacthooksGr.png',
     },
+
 ];
