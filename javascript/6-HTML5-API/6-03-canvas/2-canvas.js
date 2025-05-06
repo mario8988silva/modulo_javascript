@@ -4,6 +4,8 @@ let ctx = canvas.getContext('2d');
 let menosBtn = document.querySelector('#menosBtn');
 let maisBtn = document.querySelector('#maisBtn');
 
+canvas.addEventListener('click', lerDados, false);
+
 // faz, chama ficheiro e posiciona imagem
 let ufo = new Image();
 ufo.src = 'ufo.webp';
@@ -12,7 +14,7 @@ let y = 30;
 let vel = 5;
 
 // carrega a imagem
-ufo.addEventListener('load', draw, false);
+//ufo.addEventListener('load', draw, false);
 
 // botões
 menosBtn.addEventListener('click', diminuirVel, false);
@@ -64,6 +66,7 @@ function aumentarVel(){
 function lerDados(e){
     console.log('Ler Dados: ', e);
     anim = 0;
+    clearInterval(anim);
 }
 
 function drawBackground(){ // passar codigo no dontpad
