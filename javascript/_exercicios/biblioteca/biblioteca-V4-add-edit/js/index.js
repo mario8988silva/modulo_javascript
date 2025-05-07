@@ -1,4 +1,7 @@
-
+// importa os outros ficheiros .js com os seus devidos metodos:
+import {showPopup, closePopup} from './dom-utils.js';
+import {getBooks,getReadBooks , getNotReadBooks, getBooksByTitleAndAuthor, deleteBook, addBook, getBookById, updateBooks, } from './data-utils.js';
+import { Book } from './data.js';
 
 // DEFINIÇÃO DAS VARIÁVEIS LOCAIS : 
 //let grid = document.querySelector('section.grid');
@@ -9,10 +12,11 @@ let filters = document.getElementById('filters');
 let grid = document.getElementById('grid');
 let popup = document.getElementById('popup');
 
+/*
 console.log(livros); // verifica array de livros;
 console.log(filters); // verifica array de filtros;
 console.log(grid); // verifica cards;
-
+*/
 
 //DEFINIR AS VARIÁVEIS DO FORMULÁRIO :
 let addEditForm = document.querySelector('.addEditForm');
@@ -165,7 +169,7 @@ function gridEvents( {target:{nodeName, textContent, dataset:{type, popup, idboo
     if( type === 'editBtn'){
         fillBookForm(idbook);
 
-        form.reset();
+        
         addEditForm.classList.add('softGreen');
         addBookBtn.classList.add('hide');
         updateBookBtn.classList.remove('hide');

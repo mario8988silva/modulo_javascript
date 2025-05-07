@@ -1,6 +1,6 @@
 // Livros :
 
-class Book{
+export class Book{
     constructor(id, title, author, alreadyRead, imageUrl, imageUrlGr){
         this.id = id;
         this.title = title;
@@ -11,7 +11,7 @@ class Book{
     }
 }
 
-let livros = [
+export const livros = [
     {
         id: 0,
         title: 'Angular Com Typescript',
