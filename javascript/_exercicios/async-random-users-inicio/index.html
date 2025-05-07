@@ -6,21 +6,63 @@
     <title>Exercicio ASYNC-RANDOM</title>
 
     <style>
-        .main{
-            display: flex;
-            flex-direction: row;
+        *{
+            margin: 0;
+            padding: 0;
+            border: none;
+            box-sizing: border-box;
+
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-decoration: none;
+            font-style:normal;
+            font-weight: 400;
+            color: #000;
         }
 
-        article{
-            background-color: azure;
-            width: 500px;
+        body{
+            background-color: lightcyan;
+        }
 
+        main{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+            padding: 1em;
+        }
+
+        main article{
+            background-color: #fff;
+            display: inline-block;
+            flex-direction: column;
+            
+            width: 300px;
+            height: 400px;
+            padding: 1.5em 1em 1.5em;
+            border: .2px solid lightgray;
+            border-radius: 8px;
+        }
+
+        main article *{
+            display: flex;
+            justify-self: center;
+            flex-direction: column;
+            text-align: center;
         }
 
         article img{
             width: 150px;
             border-radius: 100px;
+            margin-bottom: 1em;
         }
+
+        h1 {
+            font-weight: 700;
+
+            margin-top: 1em;
+        }
+
 
 
     </style>
@@ -36,7 +78,7 @@
                 <p><strong></strong></p>
             </addres>
         </article>
-        -->
+        -->        
     </main>
     <script src="script.js"></script>
 </body>

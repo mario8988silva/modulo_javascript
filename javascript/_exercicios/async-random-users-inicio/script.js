@@ -27,9 +27,10 @@ fetch ('https://randomuser.me/api/?results=30')
                     <h1>${title} ${first} ${last}</h1>
                     <address>
                         <a href="mailto${email}">${email}</a>
-                        <a href="tel${phone}">${phone}</a>
-                        <p>${city}, ${state}</p>
-                        <p>${offset}</p>
+                        <br>
+                        <a href="tel${phone}">Contact: ${phone}</a>
+                        <p>City: ${city}, ${state}</p>
+                        <p>GMT: ${offset}</p>
                     </address>
                 </article>
             `
