@@ -4,6 +4,7 @@
 fetch ('https://randomuser.me/api/?results=30')
     .then(response => response.json())
     //apresentar numa pagina somente os users "femininos",
+    // feito com ajuda do chatgtpt: estava a tentar fazer a chamada de todos e só depois a filtragem. além de complicar, dava-me erro.
     .then(data => {femaleUsers = data.results.filter(user => user.gender === 'female');
         mostrarUsers(femaleUsers);
     })
